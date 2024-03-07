@@ -1,0 +1,10 @@
+
+{
+	"name": "frontend",
+	"dockerComposeFile": [
+		"../../docker-compose.yaml",
+		//"./docker-compose2.yaml"
+	],
+	"service": "frontend",
+	"workspaceFolder": "/usr/src/app"
+}
