@@ -1,16 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Ranking from "./components/ranking";
+import React from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import './App.css'
+import { GamePage } from './pages/game'
+import { HomePage } from './pages/home'
+import { Header } from './components/Header.js'
 
-function App() {
-  const strings = ['Hello', 'World', 'React', 'TypeScript'];
-
+export default function App() {
+  const strings = ['Hello', 'World', 'React', 'TypeScript', 'ast', 'asdfas'];
   return (
-    <>
-    <Ranking rankerlist={strings} />
-    </>
-  );
+    <div className="flex flex-col h-screen">
+      <Header />
+      <Router>
+        <div className="App flex-1">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/game/" element={<GamePage />} />
+          </Routes>
+        </div>
+      </Router>
+    </div>
+  )
 }
-
-export default App;
