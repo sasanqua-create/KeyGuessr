@@ -12,7 +12,7 @@ export const PlayPage: React.FC = () => {
         <Question />
       </div>
       <div className="h-1/6 flex items-center justify-center">
-        <div className="w-1/4"></div>
+        <div className="w-1/4">ここに参加者</div>
         <div className="w-1/2">
           <Answer />
         </div>
