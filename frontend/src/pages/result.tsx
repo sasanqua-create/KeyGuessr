@@ -1,7 +1,16 @@
 import { Result } from '../components/game/Result'
 import { Hint } from '../components/game/Hint'
+import Participants from '../components/game/participants.js'
+import Ranking from '../components/game/ranking.js'
+import { Link } from 'react-router-dom'
 
 export const ResultPage: React.FC = () => {
+  const pts: Array<string> = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k']
+  const rankings: Array<string> = [
+    'hackathon user1',
+    'hackathon user2',
+    'hackathon user3',
+  ]
   return (
     <div className="h-full flex-1">
       <div className="h-1/6">
@@ -11,15 +20,17 @@ export const ResultPage: React.FC = () => {
         <Hint hints={['ヒント1', 'ヒント2', 'ヒント3', 'ヒント4', 'ヒント5']} />
       </div>
       <div className="h-2/3 flex items-center justify-center">
-        <div className="w-2/3 p-6 flex items-center justify-center">
+        <div className="w-1/3 p-6 flex items-center justify-center">
           <Result />
         </div>
-        <div className="w-1/3 p-6 flex items-center justify-center">
-          ここにランキング
+        <div className="p-6">
+          <Ranking rankerlist={rankings} />
         </div>
       </div>
       <div className="h-1/6 flex items-center justify-center">
-        <div className="w-2/3">ここに参加者アイコン</div>
+        <div className="w-2/3">
+          <Participants participantlist={pts} />
+        </div>
         <div className="w-1/3 flex">
           <button className="btn btn-primary btn-outline m-2 w-52">
             <svg
@@ -38,7 +49,7 @@ export const ResultPage: React.FC = () => {
             </svg>
             もう一度チャレンジ
           </button>
-          <button className="btn btn-primary m-2 w-52">
+          <Link to="/" className="btn btn-primary m-2 w-52">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -54,7 +65,7 @@ export const ResultPage: React.FC = () => {
               />
             </svg>
             ホームに戻る
-          </button>
+          </Link>
         </div>
       </div>
     </div>
