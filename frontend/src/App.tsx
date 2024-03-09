@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
+import Participants from './components/participants';
 
 export default function App() {
+  const strings = ['Hello', 'World', 'React', 'TypeScript'];
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <Participants participantlist={strings}/>
   )
 }
