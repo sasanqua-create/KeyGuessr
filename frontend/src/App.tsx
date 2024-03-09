@@ -6,6 +6,7 @@ import { HomePage } from './pages/home'
 import { Header } from './components/Header.js'
 
 export default function App() {
+  const strings = ['Hello', 'World', 'React', 'TypeScript', 'ast', 'asdfas'];
   return (
     <div className="flex flex-col h-screen">
       <Header />
