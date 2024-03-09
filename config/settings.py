@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework', 
     'backend', 
     'django_filters',
+    'ranking',
 ]
 
 MIDDLEWARE = [
@@ -109,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tokyo'
 
 USE_I18N = True
 
