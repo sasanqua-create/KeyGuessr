@@ -1,22 +1,20 @@
 import React from 'react';
 import RankingCard from './rankingCard';
 
-const Ranking = () => {
+const Ranking = ({ rankerlist }) => {
   return (
     <div className="overflow-x-auto">
   <table className="table table-xs table-pin-rows table-pin-cols">
     <thead>
-        <RankingCard />
+        <RankingCard ranker={"name"} />
     </thead> 
     <tbody>
-      <RankingCard />
-      <RankingCard />
-      <RankingCard />
-      <RankingCard />
-      <RankingCard />
+      {rankerlist.map((ranker, index) => (
+        <RankingCard key={index} ranker={ranker} />
+      ))}
     </tbody> 
     <tfoot>
-        <RankingCard />
+      <RankingCard ranker={"name"} />
     </tfoot>
   </table>
 </div>

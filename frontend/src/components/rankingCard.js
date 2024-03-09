@@ -1,10 +1,6 @@
 import React from 'react';
 
-interface Props {
-  texts: string[];
-}
-
-const RankingCard: React.FC = () => {
+const RankingCard = ({ ranker }) => {
   return (
     <tr>
         <td>
@@ -15,7 +11,7 @@ const RankingCard: React.FC = () => {
               </div>
             </div>
             <div>
-              <div className="font-bold">name</div> {/*name*/}
+              <div className="font-bold">{ranker}</div> {/*name*/}
               {/* <div className="text-sm opacity-50">United States</div> */}
             </div>
           </div>
