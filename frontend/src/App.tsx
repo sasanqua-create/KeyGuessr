@@ -1,9 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Hint from "./game/hint";
 
 function App() {
+  const strings = ['Hello', 'World', 'React', 'TypeScript'];
+
   return (
+    <>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -20,6 +24,10 @@ function App() {
         </a>
       </header>
     </div>
+    <div>
+      <Hint  strings={strings} />
+    </div>
+    </>
   );
 }
 
