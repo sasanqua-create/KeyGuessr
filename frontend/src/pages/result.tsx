@@ -6,6 +6,9 @@ export const ResultPage: React.FC = () => {
     <div className="h-full flex-1">
       <div className="h-1/6">
         <Hint hints={['ヒント1', 'ヒント2', 'ヒント3', 'ヒント4', 'ヒント5']} />
+        <div className="w-full h-16 mt-6 bg-primary text-white text-3xl italic flex items-center justify-center tracking-widest">
+          RESULT
+        </div>
       </div>
       <div className="h-2/3 flex items-center justify-center">
         <div className="w-2/3 p-6 flex items-center justify-center">
