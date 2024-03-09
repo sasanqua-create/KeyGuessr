@@ -1,8 +1,10 @@
 import { Hint } from '../components/game/Hint'
 import { Answer } from '../components/game/Answer'
 import { Question } from '../components/game/Question'
+import Participants from '../components/game/participants.js'
 
 export const PlayPage: React.FC = () => {
+  const pts: Array<string> = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k']
   return (
     <div className="h-full flex-1">
       <div className="h-1/6">
@@ -12,7 +14,9 @@ export const PlayPage: React.FC = () => {
         <Question />
       </div>
       <div className="h-1/6 flex items-center justify-center">
-        <div className="w-1/4">ここに参加者</div>
+        <div className="w-1/4">
+          <Participants participantlist={pts} />
+        </div>
         <div className="w-1/2">
           <Answer />
         </div>

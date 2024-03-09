@@ -1,7 +1,9 @@
 import { Result } from '../components/game/Result'
 import { Hint } from '../components/game/Hint'
+import Participants from '../components/game/participants.js'
 
 export const ResultPage: React.FC = () => {
+  const pts: Array<string> = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k']
   return (
     <div className="h-full flex-1">
       <div className="h-1/6">
@@ -19,7 +21,9 @@ export const ResultPage: React.FC = () => {
         </div>
       </div>
       <div className="h-1/6 flex items-center justify-center">
-        <div className="w-2/3">ここに参加者アイコン</div>
+        <div className="w-2/3">
+          <Participants participantlist={pts} />
+        </div>
         <div className="w-1/3 flex">
           <button className="btn btn-primary btn-outline m-2 w-52">
             <svg
