@@ -1,8 +1,5 @@
 from django.contrib import admin
-from .models import Game
+from .models import Word
+
 # Register your models here.
-
-class GameAdmin(admin.ModelAdmin):
-    list_display = ('title', 'n_views')
-
-admin.site.register(Game, GameAdmin)
+admin.site.register(Word)
