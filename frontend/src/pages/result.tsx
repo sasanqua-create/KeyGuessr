@@ -2,6 +2,7 @@ import { Result } from '../components/game/Result'
 import { Hint } from '../components/game/Hint'
 import Participants from '../components/game/participants.js'
 import Ranking from '../components/game/ranking.js'
+import { Link } from 'react-router-dom'
 
 export const ResultPage: React.FC = () => {
   const pts: Array<string> = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k']
@@ -48,7 +49,7 @@ export const ResultPage: React.FC = () => {
             </svg>
             もう一度チャレンジ
           </button>
-          <button className="btn btn-primary m-2 w-52">
+          <Link to="/" className="btn btn-primary m-2 w-52">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -64,7 +65,7 @@ export const ResultPage: React.FC = () => {
               />
             </svg>
             ホームに戻る
-          </button>
+          </Link>
         </div>
       </div>
     </div>
