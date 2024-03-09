@@ -1,8 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import './game/hint.css'
-import Hint from "./game/hint";
 import Ranking from "./game/ranking";
 
 function App() {
@@ -26,7 +24,6 @@ function App() {
         </a>
       </header>
     </div>
-    <Hint  texts={strings} />
     <Ranking />
     </>
   );
