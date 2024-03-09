@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import WordList
+from .views import Game
 
 urlpatterns = [
-    path('word/', WordList.as_view(), name='word-list'),
+    path('game/', Game.as_view(), name='game'),
 ]
