@@ -7,7 +7,7 @@ import json
 from .models import Charactor
 from random import choice
 
-API_KEY = "AIzaSyDXPXD7CttRITzm0Wwpo8Q0Y83vnaHJJNY"
+API_KEY = "YOUR_API_KEY"
 
 class Game(APIView):
     def get(self, request, *args, **kwargs):
