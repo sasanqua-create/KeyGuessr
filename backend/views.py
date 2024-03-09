@@ -1,14 +1,32 @@
 from rest_framework.views import APIView
+from rest_framework import status
 from rest_framework.response import Response
-from .serializers import GameSerializer
+# from .serializers import GameSerializer
 import google.generativeai as genai
 import json
+from .models import Charactor
+from random import choice
 
-API_KEY = "YOUR_API_KEY"
+API_KEY = "AIzaSyDXPXD7CttRITzm0Wwpo8Q0Y83vnaHJJNY"
 
 class Game(APIView):
     def get(self, request, *args, **kwargs):
-        ans = "海賊狩りのゾロ"
+        level = request.query_params.get("level", None)
+        genre = request.query_params.get("genre", None)
+        
+        if level is None or genre is None:
+            return Response({"error": "Both 'level' and 'genre' parameters are required."}, status=status.HTTP_400_BAD_REQUEST)
+
+        charactor = Charactor.objects.filter(
+            level=level,
+            genre=genre
+        )
+        
+        if not charactor.exists():
+            return Response({"error": "No characters found with the given level and genre."}, status=status.HTTP_404_NOT_FOUND)
+        
+        chosen_charactor = choice(charactor)
+        ans = chosen_charactor.name
         related_words = self.get_related_words(ans)
         return Response(related_words)
 
