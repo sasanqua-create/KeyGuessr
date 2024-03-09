@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import './game/hint.css'
 import Hint from "./game/hint";
+import Ranking from "./game/ranking";
 
 function App() {
   const strings = ['Hello', 'World', 'React', 'TypeScript'];
@@ -26,6 +27,7 @@ function App() {
       </header>
     </div>
     <Hint  texts={strings} />
+    <Ranking />
     </>
   );
 }
