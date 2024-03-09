@@ -40,8 +40,11 @@ INSTALLED_APPS = [
     'corsheaders', 
     'rest_framework', 
     'backend', 
+<<<<<<< HEAD
     'django_filters',
     'ranking',
+=======
+>>>>>>> 77b52a66bd9dbc0d9ced7005ca3900f05c2e0c23
 ]
 
 MIDDLEWARE = [
