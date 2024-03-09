@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import './game/hint.css'
 import Hint from "./game/hint";
 
 function App() {
@@ -24,9 +25,7 @@ function App() {
         </a>
       </header>
     </div>
-    <div>
-      <Hint  strings={strings} />
-    </div>
+    <Hint  texts={strings} />
     </>
   );
 }
