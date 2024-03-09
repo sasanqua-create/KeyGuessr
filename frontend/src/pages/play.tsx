@@ -2,7 +2,7 @@ import { Hint } from '../components/game/Hint'
 import { Answer } from '../components/game/Answer'
 import { Question } from '../components/game/Question'
 
-export const Play: React.FC = () => {
+export const PlayPage: React.FC = () => {
   return (
     <div className="h-full flex-1">
       <div className="h-1/6">

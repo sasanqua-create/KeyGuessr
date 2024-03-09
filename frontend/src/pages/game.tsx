@@ -1,11 +1,11 @@
-import { Play } from './play'
-import { Result } from './result'
+import { PlayPage } from './play'
+import { ResultPage } from './result'
 
-export const Game: React.FC = () => {
-  const constTrue = true
+export const GamePage: React.FC = () => {
+  const constTrue = false
   if (constTrue) {
-    return <Play />
+    return <PlayPage />
   } else {
-    return <Result />
+    return <ResultPage />
   }
 }
