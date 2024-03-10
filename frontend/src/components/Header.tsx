@@ -40,7 +40,7 @@ export const Header: React.FC = () => {
             </ul>
           </div>
         ) : (
-          <button className="mt-6 btn btn-primary" onClick={signIn}>
+          <button className="btn btn-primary" onClick={signIn}>
             Sign in
           </button>
         )}
