@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Result } from '../components/game/Result'
 import { Hint } from '../components/game/Hint'
 import Participants from '../components/game/participants.js'
@@ -8,12 +8,12 @@ import axios from 'axios'
 
 export const ResultPage: React.FC = () => {
   const pts: Array<string> = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k']
-  const rankings = useRef([])
+  const [rankings, setRanking] = useState([])
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_BACKEND_API}/api/rankingranking/`)
       .then(response => {
-        rankings.current = response.data
+        setRanking(response.data)
       })
   }, [])
   return (

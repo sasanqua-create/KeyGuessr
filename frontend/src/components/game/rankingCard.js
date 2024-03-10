@@ -14,12 +14,12 @@ const RankingCard = ({ ranker }) => {
             </div>
           </div>
           <div>
-            <div className="">{ranker}</div>
+            <div className="">{ranker.user}</div>
           </div>
         </div>
       </td>
       <td>
-        <span className="font-semibold text-lg">得点</span>
+        <span className="font-semibold text-lg">{ranker.score_time}</span>
       </td>
     </tr>
   )
