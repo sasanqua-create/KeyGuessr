@@ -1,8 +1,9 @@
-const ParticipantCard = ({ partcipant }) => {
+const ParticipantCard = ({ participant }) => {
+  console.log(participant)
   return (
     <div className="avatar">
       <div className="rounded-full max-w-12">
-        <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+        <img src={participant.photoURL} />
       </div>
     </div>
   )

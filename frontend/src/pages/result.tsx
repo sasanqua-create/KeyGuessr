@@ -1,4 +1,4 @@
-import type { User } from '../interface/user'
+import type { UserApp } from '../interface/user'
 import { useState, useEffect } from 'react'
 import { Result } from '../components/game/Result'
 import { Hint } from '../components/game/Hint'
@@ -9,9 +9,9 @@ import axios from 'axios'
 
 type ResultProps = {
   ans: string
-  pts: Array<string>
-  hints: Array<string>
-  user: User
+  pts: Array<UserApp>
+  hints: Array<{ word: string; relevance: string }>
+  user: UserApp
 }
 
 export const ResultPage: React.FC<ResultProps> = ({

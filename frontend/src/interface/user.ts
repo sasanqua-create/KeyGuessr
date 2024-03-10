@@ -1,4 +1,4 @@
-export interface User {
-  displayName: string
-  avatar: string
+export interface UserApp {
+  displayName: string | null
+  photoURL: string | null
 }

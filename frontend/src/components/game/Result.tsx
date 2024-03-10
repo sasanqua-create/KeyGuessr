@@ -1,5 +1,5 @@
-import type { User } from '../../interface/user'
-export const Result: React.FC<{ ans: string; user: User }> = ({
+import type { UserApp } from '../../interface/user'
+export const Result: React.FC<{ ans: string; user: UserApp }> = ({
   ans,
   user,
 }) => {
