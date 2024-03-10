@@ -11,6 +11,10 @@ export const ResultPage: React.FC = () => {
     'hackathon user2',
     'hackathon user3',
   ]
+  await axios.get(`${REACT_APP_BACKEND_API}`).then(response => {
+    console.log(response.data)
+    rankings = response.data
+  })
   return (
     <div className="h-full flex-1">
       <div className="h-1/6">
