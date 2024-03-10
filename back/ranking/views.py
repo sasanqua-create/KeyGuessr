@@ -4,7 +4,7 @@ from .models import ranking , user_id
 from ranking.serializers import RankingSerializer, UserlistSerializer
 
 class RankingAPIView(viewsets.ModelViewSet):
-    queryset = ranking.objects.all()
+    queryset = ranking.objects.order_by('-score_time')
     serializer_class = RankingSerializer
 
 class UserlistAPIview(viewsets.ModelViewSet):
