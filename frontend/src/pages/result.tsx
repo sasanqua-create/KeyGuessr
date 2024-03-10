@@ -1,3 +1,4 @@
+import type { User } from '../interface/user'
 import { useState, useEffect } from 'react'
 import { Result } from '../components/game/Result'
 import { Hint } from '../components/game/Hint'
@@ -6,8 +7,19 @@ import Ranking from '../components/game/ranking.js'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
-export const ResultPage: React.FC = () => {
-  const pts: Array<string> = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k']
+type ResultProps = {
+  ans: string
+  pts: Array<string>
+  hints: Array<string>
+  user: User
+}
+
+export const ResultPage: React.FC<ResultProps> = ({
+  ans,
+  pts,
+  hints,
+  user,
+}) => {
   const [rankings, setRanking] = useState([])
   useEffect(() => {
     axios
@@ -22,11 +34,11 @@ export const ResultPage: React.FC = () => {
         <div className="w-full h-16 mb-6 bg-primary text-white text-3xl italic flex items-center justify-center tracking-widest">
           RESULT
         </div>
-        <Hint hints={['ヒント1', 'ヒント2', 'ヒント3', 'ヒント4', 'ヒント5']} />
+        <Hint hints={hints} />
       </div>
       <div className="h-2/3 flex items-center justify-center">
         <div className="w-1/3 p-6 flex items-center justify-center">
-          <Result />
+          <Result ans={ans} user={user} />
         </div>
         <div className="p-6">
           <Ranking rankerlist={rankings} />
