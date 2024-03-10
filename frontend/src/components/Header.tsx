@@ -4,7 +4,7 @@ import { signInWithPopup, signOut } from 'firebase/auth'
 import { Link } from 'react-router-dom'
 
 export const Header: React.FC = () => {
-  const [user, loading, error] = useAuthState(auth)
+  const [user] = useAuthState(auth)
   const signIn = () => {
     signInWithPopup(auth, provider)
   }

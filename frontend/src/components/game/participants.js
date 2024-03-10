@@ -1,8 +1,6 @@
 import ParticipantCard from './participantCard'
 
 const Participants = ({ participantlist }) => {
-  const columnWidth = `${Math.max(100 / participantlist.length, 20)}%`
-
   return (
     <div className="flex flex-wrap">
       {participantlist.map((participant, index) => (

@@ -1,17 +1,21 @@
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import { Result } from '../components/game/Result'
 import { Hint } from '../components/game/Hint'
 import Participants from '../components/game/participants.js'
 import Ranking from '../components/game/ranking.js'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 export const ResultPage: React.FC = () => {
   const pts: Array<string> = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k']
-  let rankings = useRef([])
-  await axios.get(`${REACT_APP_BACKEND_API}`).then(response => {
-    console.log(response.data)
-    rankings.current = response.data
-  })
+  const rankings = useRef([])
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_BACKEND_API}/api/rankingranking/`)
+      .then(response => {
+        rankings.current = response.data
+      })
+  }, [])
   return (
     <div className="h-full flex-1">
       <div className="h-1/6">
