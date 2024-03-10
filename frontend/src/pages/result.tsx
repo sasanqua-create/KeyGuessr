@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { Result } from '../components/game/Result'
 import { Hint } from '../components/game/Hint'
 import Participants from '../components/game/participants.js'
@@ -6,14 +7,10 @@ import { Link } from 'react-router-dom'
 
 export const ResultPage: React.FC = () => {
   const pts: Array<string> = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k']
-  const rankings: Array<string> = [
-    'hackathon user1',
-    'hackathon user2',
-    'hackathon user3',
-  ]
+  let rankings = useRef([])
   await axios.get(`${REACT_APP_BACKEND_API}`).then(response => {
     console.log(response.data)
-    rankings = response.data
+    rankings.current = response.data
   })
   return (
     <div className="h-full flex-1">
