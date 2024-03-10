@@ -31,12 +31,7 @@ class Game(APIView):
         chosen_charactor = choice(charactor)
         ans = chosen_charactor.name
         related_words = self.get_related_words(ans)
-        
-        chosen_charactor.word = related_words
-        chosen_charactor.save()
-        
-        serializer = CharactorSerializer(chosen_charactor)
-        return Response(serializer.data)
+        return Response(related_words)
 
     def get_related_words(self, ans):
         genai.configure(api_key=API_KEY)
@@ -44,7 +39,7 @@ class Game(APIView):
         prompt = f'''
         答えとなる単語"{ans}"から連想する単語をJson形式で30個羅列してください。以下の条件を満たすこと。
         1 それぞれの単語には答えとなる単語"{ans}"との関連度(1.00~0.00の間)を判断して数値を付けること。
-        2 回答には余計な文字を一切入れないこと。
+        2 回答には余計な文字を一切入れず以下の指定する形式でjsonとして出力すること。
         3 関連度が高い順に上から並べる。
         4 {ans}に直接的に結びつく言葉は禁止。
         禁止例)
@@ -74,5 +69,8 @@ class Game(APIView):
         }}
         '''
         response = gemini_pro.generate_content(prompt)
-        related_words = json.loads(response.text)
+        print(response.text)
+        related_words = json.loads(response.text.replace('```json','').replace('```',''))
+        related_words["ans"] = ans
+        related_words["words"] = related_words["words"][:6]
         return related_words
